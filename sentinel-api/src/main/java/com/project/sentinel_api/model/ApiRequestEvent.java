@@ -26,7 +26,7 @@ public class ApiRequestEvent {
 
     private String httpMethod;
 
-    private String idAddress;
+    private String ipAddress;
 
     @Column(length = 512)
     private String userAgent;
