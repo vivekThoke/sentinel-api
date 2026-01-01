@@ -1,6 +1,7 @@
 package com.project.sentinel_api.config;
 
 import com.project.sentinel_api.filter.ApiKeyAuthFilter;
+import com.project.sentinel_api.filter.RateLimitingFilter;
 import com.project.sentinel_api.filter.RequestTrackingFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -30,5 +31,16 @@ public class FilterConfig {
         registration.setOrder(2);
 
         return  registration;
+    }
+
+    @Bean
+    public FilterRegistrationBean<RateLimitingFilter> rateLimitFilter(RateLimitingFilter filter){
+        FilterRegistrationBean<RateLimitingFilter> registration = new FilterRegistrationBean<>();
+
+        registration.setFilter(filter);
+        registration.addUrlPatterns("/api/*");
+        registration.setOrder(2);
+
+        return registration;
     }
 }
