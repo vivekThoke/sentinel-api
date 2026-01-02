@@ -5,7 +5,6 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/sentinel-api/pom.xml" />
-        <option value="$PROJECT_DIR$/backend/sentinel-api/pom.xml" />
       </list>
     </option>
   </component>
